@@ -28,12 +28,113 @@
   </nav>
 
   <search>
-  <form>
-    <input name="srch" id="srch" placeholder="  Search ">
-    <img class="imag" src="../image/search.png" alt="" width="20" height="20">
-  </form>
+  <input type="text" id="search" placeholder="Tapez un nom ou spécialité...">
+  <div id="results"></div>
 </search>
 </header>
+
+
+
+<section class="saction7">
+
+  <div class="contener">
+    <h2 class="titre">Prendre un Rendez-vous</h2>
+    
+    <div class="form-card" aria-labelledby="formTitle">
+        <form id="rendezvousForm" autocomplete="off">
+
+          <div class="field">
+            <label for="fullname">Nom complet</label>
+            <input id="fullname" name="fullname" type="text" placeholder="Ex: Ahmed morabit" required />
+          </div>
+
+          <div class="field">
+            <label for="email">Adresse e-mail</label>
+            <input id="email" name="email" type="email" placeholder="exemple@email.com" required />
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="date">Date</label>
+              <input id="date" name="date" type="date" required />
+            </div>
+
+            
+          </div>
+
+          <div class="field">
+            <label for="medecin">Sélectionnez un médecin</label>
+            <select id="medecin" name="medecin" required>
+              <option value="">-- Choisir --</option>
+              <option value="Dr. Fatima Belkadi">Dr. Imane REGHAY</option>
+              <option value="Dr. Ahmed El Idrissi">Dr. Youssef El Amrani</option>
+              <option value="Dr. Youssef Amrani">Dr. Omar Bensaid</option>
+              <option value="Dr. Leïla Mourad">Dr. Hassan Chafik</option>
+              <option value="Dr. Fatima Belkadi">Dr. Salma Zahiri</option>
+              <option value="Dr. Ahmed El Idrissi">Dr. Rachid Mouline</option>
+              <option value="Dr. Youssef Amrani">Dr. Khalid Benali</option>
+              <option value="Dr. Leïla Mourad">Dr. Mohamed Idrissi</option>
+              <option value="Dr. Fatima Belkadi">Dr. Adil El Fassi</option>
+              <option value="Dr. Ahmed El Idrissi">Dr. Karim Essafi</option>
+              <option value="Dr. Youssef Amrani">Dr. Nadia Benomar</option>
+              <option value="Dr. Leïla Mourad">Dr. Samir Bouzid</option>
+              <option value="Dr. Fatima Belkadi">Dr. Anouar El Ghali</option>
+              <option value="Dr. Ahmed El Idrissi">Dr. Imane Kabbaj</option>
+              <option value="Dr. Youssef Amrani">Dr. Nabil Rahmouni</option>
+              <option value="Dr. Leïla Mourad">Dr. Tariq Lahlou</option>
+            </select>
+          </div>
+
+          <div class="submit">
+            <button class="btn" type="submit">Réserver</button>
+          </div>
+
+        </form>
+      </div>
+  </div>
+</section>
+
+
+
+<footer>
+    <div class="content-footer">
+      <div class="logo-medi">
+    <img class="logo-footer" src="../image/logo-medical.jpg" alt="" width="150" height="150">
+    <h2 class="medi">Medicare+</h2>
+      </div>
+    <div class="images">
+    <a href=""><img src="../image/facebook-brands.svg" alt="" width="50" height="50"></a>
+    <a href=""><img src="../image/instagram-brands.svg" alt="" width="50" height="50"></a>
+    <a href=""><img src="../image/linkedin-brands.svg" alt="" width="50" height="50"></a>
+    <a href=""><img src="../image/youtube-brands.svg" alt="" width="50" height="50"></a>
+    </div>
+    </div>
+    <div class="ling"></div>
+    <div class="link">
+      <div class="lin">
+    <p class="p">NOS SPÉCIALITÉS ET MÉDECINS</p>
+    <a href="">Nos pôles de spécialité</a>
+    <a href="">Liste des médecins</a>
+    <a href="">Prendre un RDV</a>
+      </div>
+
+      <div  class="lin">
+    <p class="p">NOS PATIENTS</p>
+    <a href="">Parcours Patients</a>
+    <a href="">Patients Internationaux</a>
+    <a href="">InfoSanté</a>
+    <a href="">Documents utiles</a>
+    </div>
+
+    <div class="lin">
+    <p class="p">Documents utiles</p>
+    <a href="">Présentation</a>
+    <a href="">SAMU</a>
+    <a href="">Actualités et evènements</a>
+    <a href="">Espace presse</a>
+    </div>
+    </div>
+  </footer>
     
 </body>
 </html>

@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+
     <title>Document</title>
 </head>
 <body>
@@ -28,14 +32,13 @@
   </nav>
 
   <search>
-  <form>
-    <input name="srch" id="srch" placeholder="  Search ">
-    <img class="imag" src="../image/search.png" alt="" width="20" height="20">
-  </form>
+  <input type="text" id="search" placeholder="Tapez un nom ou spécialité...">
+  <div id="results"></div>
 </search>
 </header>
 
 <section class="section6">
+  <p class="equipe">Équipe médicale</p>
     <div class="list-medcins">
         <div class="med">
             <img class="photo" src="../image/photo1.png" alt="" width="300" height="200">
@@ -181,5 +184,7 @@
     </div>
     </div>
   </footer>
+
+  <script src="../apps.js"></script>
 </body>
 </html>
