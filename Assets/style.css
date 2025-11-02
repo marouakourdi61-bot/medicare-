@@ -11,7 +11,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 200px;
+    gap: 100px;
     top: 0;
     z-index: 1000;
 
@@ -48,6 +48,16 @@ li{
     padding-left: 10px;
 }
 
+#search:focus {
+  border-color: #295FA9;
+  box-shadow: 0 0 5px rgba(41,95,169,0.3);
+}
+
+ .srch{
+    display: flex;
+    gap: 50px;
+ }
+
 
 /* Menu Burger */
 .burger {
@@ -67,6 +77,15 @@ li{
   border-radius: 4px;
   transition: 0.4s;
   margin-left: 100px;
+}
+
+#btn-search{
+    width: 100px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: #1DA6DC;
+    color: white;
+    border: none;
 }
 
 /*===============================Acceuil=============================*/
@@ -99,6 +118,7 @@ section{
     width: 500%;
     height: 500px;
     display: flex;
+    gap: 300px;
 }
 .slides input{
     display: none;
@@ -118,75 +138,7 @@ section{
     height: 500px;
 }
 
-.navigation-manual{
-    position: absolute;
-    width: 800px;
-    margin-top: -40px;
-    display: flex;
-    justify-content: center;
-}
-.manual-btn{
-    border: 2px solid #40D3DC;
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 1s;
-}
-.manual-btn:not(:last-child){
-    margin-right: 40px;
-}
-.manual-btn:hover{
-    background:#40D3DC;
-}
-#radio1:checked ~ .first{
-    margin-left: 0;
-}
-#radio2:checked ~ .first{
-    margin-left: -20%;
-}
-#radio3:checked ~ .first{
-    margin-left: -40%;
-}
-#radio4:checked ~ .first{
-    margin-left: -60%;
-}
-#radio5:checked ~ .first{
-    margin-left: -80%;
-}
-.navigation-auto{
-    position: absolute;
-    display: flex;
-    width: 800px;
-    justify-content: center;
-    margin-top: 460px;
-}
-.navigation-auto div{
-    border: 2px solid #40D3DC;
-    padding: 5px;
-    border-radius: 10px;
-    transition: 1s;
-}
-.navigation-auto div:not(:last-child){
-    margin-right: 40px;
-}
-#radio1:checked ~ .navigation-auto .auto-btn1{
-    background: #40D3DC;
-}
 
-#radio2:checked ~ .navigation-auto .auto-btn2{
-    background: #40D3DC;
-}
-
-#radio3:checked ~ .navigation-auto .auto-btn3{
-    background: #40D3DC;
-}
-
-#radio4:checked ~ .navigation-auto .auto-btn4{
-    background: #40D3DC;
-}
-#radio5:checked ~ .navigation-auto .auto-btn5{
-    background: #40D3DC;
-}
 
 
 .medcin-image{
@@ -252,6 +204,7 @@ h1{
     
 }
 
+
 footer{
     width: 100wh;
     height: auto;
@@ -311,8 +264,19 @@ footer{
 .p{
     color: white;
 }
-.Articles{
+
+
+
+
+#articles-section{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+.Articles {
+  display: flex;
     flex-wrap: wrap;
     gap: 100px;
     justify-content: center;
@@ -320,8 +284,8 @@ footer{
     margin-top: 100px;
 }
 
-.Articl{
-    width: 500px;
+.article-card {
+  width: 500px;
     height: 300px;
     border: solid 1px #1DA6DC;
     border-radius: 20px;
@@ -334,31 +298,55 @@ footer{
     gap: 20px;
     box-shadow:0 5px 5px rgba(128, 128, 128, 0.547) ;
 }
-.art{
-    color: #1DA6DC;
+
+.article-card:hover {
+  transform: scale(1.03);
 }
-.tire-arti{
-    text-align: center;
-    margin-top: 100px;
+
+.article-title {
+  font-size: 18px;
+  color: #295FA9;
+  margin-bottom: 10px;
 }
+
+.article-content {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.not-found {
+  text-align: center;
+  width: 100%;
+  color: gray;
+}
+
+
+
+
+
+
 
 @media( max-width: 750px){
 
     header{
         display: flex;
-        gap: 200px;
-        
-        
-        
-
-    }
+        gap: 30%;
+ }
+ .srch{
+    display: none;
+ }
     
     .burger {
     display: flex;
     margin-left: 0px;
   }
   .logo{
-    margin-left: 50px;
+    margin-left: 0px;
+  }
+ 
+       .burger {
+    display: flex;
   }
  
   .nav-list {
@@ -369,12 +357,12 @@ footer{
     background: #d9d8d6e7;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     overflow: hidden;
-    max-height: 0; 
+    max-height: 0; /* fermé */
     transition: max-height 0.5s ease;
   }
 
   .nav-list.active {
-    max-height: 800px;
+    max-height: 800px; /* menu ouvert */
   }
 
   .nav-list ul {
@@ -411,16 +399,6 @@ footer{
     color: white;
     transition: 0.3s ease;
     
-  }
-  .bb{
-    background: none;
-    box-shadow: none;
-    
-  }
-  .bb:hover{
-    background: none;
-    box-shadow: none;
-    color: #3796CC;
   }
     .medcin-image{
         display: none;
@@ -474,7 +452,7 @@ footer{
    text-shadow: 2px 2px 5px #15b1ef6b;
    
 }
-.section6{
+.container{
     font-family: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-optical-sizing: auto; 
     font-variation-settings: "wght" 600, "wdth" 90, "opsz" 48;
@@ -486,12 +464,14 @@ footer{
     justify-content: center;
     
 }
-.list-medcins{
+.doctors{
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 50px;
     flex-wrap: wrap;
 }
-.med{
+.doctor-card{
     width: 300px;
     height: 380px;
     box-shadow: 5px 2px 10px #1da6dc6e;
@@ -500,26 +480,35 @@ footer{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
     transition: transform 0.3s;
 }
 
-.med:hover{
+.doctor-card:hover{
     transform: translateY(-10px);
     box-shadow:0 10px 20px #1DA6DC;
 }
-.photo{
+.doctor-card img {
+    
+    width: 300px;
+    height: 200px;
     border-radius: 15px 15px 0 0;
     box-shadow: 0px 2px 10px rgba(128, 128, 128, 0.495);
     margin-top: -40px;
 }
- h3{
-    margin-top: 20px;
+.doctor-nom {
+    margin-top: 30px;
     color: #295FA9;
  }
- h4{
+.doctor-spésialité{
     color: grey;
+    margin-top: 20px;
  }
+
+ .doctor-disponibiliter{
+    color: red;
+ }
+
  .bouton{
     width: 100px;
     height: 30px;
@@ -533,6 +522,7 @@ footer{
     justify-content: center;
     box-shadow: 0 2px 5px 2px #40d4dc66;
  }
+
  /*================================rendez-vous=================================*/
 
  .saction7{

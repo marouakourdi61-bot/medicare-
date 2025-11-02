@@ -18,6 +18,7 @@
     <span></span>
   </div>
 
+  <div class="srch">
   <nav class="nav-list" id="nav-menu">
     <ul class="lu">
       <li class="menu"><a class="aa" href="index.html">Accueil</a></li>
@@ -25,12 +26,13 @@
       <li class="menu"><a class="aa" href="pages/rendezvous.html">Rendez-vous</a></li>
       
     </ul>
+    
   </nav>
 
-  <search>
-  <input type="text" id="search" placeholder="Tapez un nom ou spécialité...">
-  <div id="results"></div>
-</search>
+  <div ><input type="text" id="search" placeholder="Rechercher un médecin ou une spécialité...">
+  <button id="btn-search">Rechercher</button></div>
+  </div>
+  
 
 
 </header>
@@ -39,11 +41,7 @@
   <div class="slides">
     <div class="slider">
       
-      <input type="radio" name="rdio-btn" id="radio1">
-      <input type="radio" name="rdio-btn" id="radio2">
-      <input type="radio" name="rdio-btn" id="radio3">
-      <input type="radio" name="rdio-btn" id="radio4">
-      <input type="radio" name="rdio-btn" id="radio5">
+      
     
 
 
@@ -78,22 +76,10 @@
       <p>L’hygiène intime et corporelle.</p>
     </div>
 
-    <div class="navigation-auto">
-                <div class="auto-btn1"></div> 
-                <div class="auto-btn2"></div>
-                <div class="auto-btn3"></div>
-                <div class="auto-btn4"></div>
-                <div class="auto-btn5"></div>
-            </div>
+    
 
     </div>
-    <div class="navigation-manual">
-            <label for="radio1" class="manual-btn"></label>
-             <label for="radio2" class="manual-btn"></label>
-              <label for="radio3" class="manual-btn"></label>
-               <label for="radio4" class="manual-btn"></label>
-               <label for="radio5" class="manual-btn"></label>
-        </div>
+    
   </div>
 
     <img class="medcin-image" src="image/medcin1.jpg" alt="">
@@ -156,25 +142,12 @@
     
   </section>
 
-  <section >
-    
-    <h1 class="tire-arti">Article</h1>
-    <div class="Articles">
-    <div class="Articl">
-        <h2 class="art">Le sommeil, un allié du bien-être</h2>
-        <p>Dormir suffisamment est essentiel pour le corps et l’esprit. Le manque de sommeil provoque de la fatigue, du stress et une baisse de concentration. Les adultes devraient dormir entre 7 et 8 heures par nuit. Pour mieux dormir, il est conseillé d’éviter les écrans avant le coucher et de garder des horaires réguliers. Un bon sommeil aide aussi à renforcer la mémoire et le système immunitaire.</p>
-      </div>
-      <div class="Articl">
-        <h2 class="art">L’importance d’une alimentation équilibrée</h2>
-        <p>Une alimentation saine est la base d’une bonne santé. Manger des fruits, des légumes, des céréales complètes et des protéines permet de renforcer le système immunitaire et d’éviter de nombreuses maladies. Il est aussi important de limiter le sucre, le sel et les aliments gras. Boire beaucoup d’eau aide également à éliminer les toxines et à garder de l’énergie tout au long de la journée.</p>
-      </div>
-      <div class="Articl">
-        <h2 class="art">L’activité physique au quotidien</h2>
-        <p>Bouger chaque jour est bénéfique pour la santé physique et mentale. Marcher, faire du vélo ou du sport aide à prévenir les maladies cardiovasculaires et à maintenir un poids sain. Même 30 minutes d’exercice par jour peuvent faire une grande différence. L’activité physique réduit aussi le stress, améliore l’humeur et favorise un bon sommeil.</p>
-      </div>
-    </div>
-    
-  </section>
+  <section id="articles-section">
+  <h1 class="tire-arti">Articles</h1>
+  <div id="articles-container" class="Articles"></div>
+  <div id="articles-container"></div>
+</section>
+
 
   <footer>
     <div class="content-footer">
@@ -215,8 +188,31 @@
     </div>
     </div>
   </footer>
+  <script>
+const slider = document.querySelector('.slider');
+let position = 0;
+const speed = 1; // pixels par intervalle
+const slideWidth = document.querySelector('.text').offsetWidth + 20; // slide + gap
+const totalSlides = document.querySelectorAll('.text').length;
+
+// Dupliquer les slides pour l'effet infini
+slider.innerHTML += slider.innerHTML;
+
+function moveSlider() {
+    position -= speed;
+    if (Math.abs(position) >= slideWidth * totalSlides) {
+        position = 0; // revient au début
+    }
+    slider.style.transform = `translateX(${position}px)`;
+}
+
+setInterval(moveSlider, 20); // ajuster la vitesse
+</script>
+
+  
   
   <script src="apps.js"></script>
+
 
 
 </body>
